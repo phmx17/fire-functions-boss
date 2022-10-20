@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functions Boss</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <h1 style="text-align: center ;" >Fire Functions Boss Man</h1>
+  
+    <!-- new request modal -->
+    <div class="new-request">
+      <div class="modal">
+        <h2>Request a Tutorial</h2>
+        <form>
+          <input type="text" name="request" placeholder="Request...">
+          <button>Submit Request</button>
+          <p class="error"></p>
+        </form>
+      </div>
+    </div>
+    
+    <header>
+      <nav>
+        <a class="add-request">add request</a>
+        <a class="sign-out">sign out</a>
+      </nav>
+    </header>
+
+    <section class="content">
+      <h1>Tutorial Requests</h1>
+      <ul class="request-list"> 
+        <li>
+          <span class="text">Laravel 6 tutorial</span>
+          <div>
+            <span class="votes">125</span>
+            <i class="material-icons upvote">arrow_upward</i>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+  <script>
+    import { initializeApp } from 'firebase/app';
+    import { getAuth } from "firebase/auth";
+    import { getFunctions } from 'firebase/functions'; 
+    import { getFirestore } from "firebase/firestore";
+    
+    // See: https://firebase.google.com/docs/web/learn-more#config-object
+    const firebaseConfig = require('../firebaseConfig.json')
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const functions = getFunctions(app);
+    const auth = getAuth(app);
+    // Initialize Cloud Firestore and get a reference to the service
+    const db = getFirestore(app);
+
+  </script>
+
+</body>
+</html>
